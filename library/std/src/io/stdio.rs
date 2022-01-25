@@ -539,8 +539,8 @@ impl BufRead for StdinLock<'_> {
         self.inner.fill_buf()
     }
 
-    fn consume(&mut self, n: usize) {
-        self.inner.consume(n)
+    fn consume(&mut self, amt: usize) {
+        self.inner.consume(amt)
     }
 
     fn read_until(&mut self, byte: u8, buf: &mut Vec<u8>) -> io::Result<usize> {
